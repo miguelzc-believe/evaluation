@@ -1,9 +1,5 @@
 # 🎯 Ejercicios de Evaluación - NestJS y Prisma ORM
 
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
-
 ## 📋 Descripción General
 
 Este proyecto contiene 10 ejercicios diseñados para evaluar el conocimiento de NestJS y Prisma ORM. Cada ejercicio debe ser completado con su correspondiente testing, y **solo se puede hacer commit cuando todos los tests pasen correctamente**.
@@ -11,13 +7,11 @@ Este proyecto contiene 10 ejercicios diseñados para evaluar el conocimiento de 
 ## 🚀 Configuración Inicial
 
 ### Prerrequisitos
-
 - Node.js (versión 18 o superior)
 - Yarn o npm
 - Git
 
 ### Instalación
-
 ```bash
 # Clonar el repositorio
 git clone <repository-url>
@@ -32,9 +26,7 @@ yarn db:migrate
 ```
 
 ### Variables de Entorno
-
 El archivo `.env` ya está configurado con:
-
 ```
 DATABASE_URL="file:./dev.db"
 ```
@@ -42,138 +34,118 @@ DATABASE_URL="file:./dev.db"
 ## 📚 Ejercicios
 
 ### ✅ Ejercicio 1: DTOs con Validación
-
 **Archivo**: `src/exercises/exercise1/user.dto.ts`
 **Test**: `src/exercises/exercise1/user.dto.spec.ts`
 
 **Objetivo**: Crear DTOs para usuarios con validaciones usando class-validator.
 
 **Requisitos**:
-
 - `CreateUserDto` con validaciones para email, name y age
 - `UpdateUserDto` que extienda de `CreateUserDto` con campos opcionales
 - Validaciones apropiadas (email válido, nombre mínimo 2 caracteres, edad entre 18-100)
 
 ### ✅ Ejercicio 2: Servicio CRUD
-
 **Archivo**: `src/exercises/exercise2/users.service.ts`
 **Test**: `src/exercises/exercise2/users.service.spec.ts`
 
 **Objetivo**: Implementar un servicio completo de usuarios con Prisma.
 
 **Requisitos**:
-
 - Métodos CRUD completos (create, findAll, findOne, update, remove)
 - Paginación en findAll
 - Manejo de errores de Prisma
 - Validación de existencia de registros
 
 ### ✅ Ejercicio 3: Controlador REST
-
 **Archivo**: `src/exercises/exercise3/users.controller.ts`
 **Test**: `src/exercises/exercise3/users.controller.spec.ts`
 
 **Objetivo**: Crear un controlador REST completo para usuarios.
 
 **Requisitos**:
-
 - Endpoints: GET /users, GET /users/:id, POST /users, PATCH /users/:id, DELETE /users/:id
 - Uso de DTOs del ejercicio 1
 - Códigos de estado HTTP apropiados
 - Manejo de parámetros de query para paginación
 
 ### ✅ Ejercicio 4: Relaciones con Prisma
-
 **Archivo**: `src/exercises/exercise4/posts.service.ts`
 **Test**: `src/exercises/exercise4/posts.service.spec.ts`
 
 **Objetivo**: Implementar un servicio de posts con relaciones complejas.
 
 **Requisitos**:
-
 - CRUD completo para posts
 - Relaciones con usuarios (autores) y tags
 - Métodos especializados (findByAuthor, findWithTags)
 - Manejo de relaciones many-to-many
 
 ### ✅ Ejercicio 5: Pipes Personalizados
-
 **Archivo**: `src/exercises/exercise5/validation.pipe.ts`
 **Test**: `src/exercises/exercise5/validation.pipe.spec.ts`
 
 **Objetivo**: Crear pipes de validación personalizados.
 
 **Requisitos**:
-
 - `UserExistsPipe` para validar existencia de usuarios
 - `PostExistsPipe` para validar existencia de posts
 - Decoradores personalizados
 - Manejo de errores apropiados
 
 ### ✅ Ejercicio 6: Filtros de Excepción
-
 **Archivo**: `src/exercises/exercise6/exception.filter.ts`
 **Test**: `src/exercises/exercise6/exception.filter.spec.ts`
 
 **Objetivo**: Implementar filtros de excepción para errores de Prisma.
 
 **Requisitos**:
-
 - Filtro para `PrismaClientKnownRequestError`
 - Filtro para `PrismaClientValidationError`
 - Filtro global para errores no manejados
 - Logging de errores
 
 ### ✅ Ejercicio 7: Interceptor de Transformación
-
 **Archivo**: `src/exercises/exercise7/transform.interceptor.ts`
 **Test**: `src/exercises/exercise7/transform.interceptor.spec.ts`
 
 **Objetivo**: Crear un interceptor que estandarice las respuestas de la API.
 
 **Requisitos**:
-
 - Formato estándar: `{ success: boolean, data: any, message?: string, timestamp: string }`
 - Manejo de diferentes tipos de respuesta
 - Exclusión de rutas específicas
 - Decorador para saltar transformación
 
 ### ✅ Ejercicio 8: Guards de Autenticación
-
 **Archivo**: `src/exercises/exercise8/auth.guard.ts`
 **Test**: `src/exercises/exercise8/auth.guard.spec.ts`
 
 **Objetivo**: Implementar un guard básico de autenticación.
 
 **Requisitos**:
-
 - Validación de header Authorization
 - Token simulado: "Bearer valid-token"
 - Decorador `@Public()` para rutas públicas
 - Manejo de errores de autenticación
 
 ### ✅ Ejercicio 9: Middleware de Logging
-
 **Archivo**: `src/exercises/exercise9/logger.middleware.ts`
 **Test**: `src/exercises/exercise9/logger.middleware.spec.ts`
 
 **Objetivo**: Crear un middleware para logging de requests.
 
 **Requisitos**:
-
 - Logging de inicio y fin de requests
 - Información: método, URL, IP, User-Agent, duración
 - Implementación como clase y función
 - Cálculo de duración de requests
 
 ### ✅ Ejercicio 10: Tests E2E
-
 **Archivo**: `test/exercises.e2e-spec.ts`
 
 **Objetivo**: Implementar tests end-to-end completos.
 
 **Requisitos**:
-
 - Tests para todos los endpoints de usuarios
 - Validación de respuestas HTTP
 - Manejo de base de datos de test
@@ -182,7 +154,6 @@ DATABASE_URL="file:./dev.db"
 ## 🧪 Ejecución de Tests
 
 ### Tests Unitarios
-
 ```bash
 # Ejecutar todos los tests unitarios
 yarn test
@@ -195,14 +166,12 @@ yarn test:cov
 ```
 
 ### Tests E2E
-
 ```bash
 # Ejecutar tests end-to-end
 yarn test:e2e
 ```
 
 ### Todos los Tests
-
 ```bash
 # Ejecutar tests unitarios y e2e
 yarn pre-commit
@@ -223,28 +192,24 @@ git commit -m "Mi commit"
 ## 📊 Criterios de Evaluación
 
 ### Funcionalidad (40%)
-
 - ✅ Todos los endpoints funcionan correctamente
 - ✅ Validaciones implementadas apropiadamente
 - ✅ Manejo de errores elegante
 - ✅ Relaciones de base de datos funcionando
 
 ### Testing (30%)
-
 - ✅ Todos los tests pasan
 - ✅ Coverage mínimo del 80%
 - ✅ Tests unitarios y e2e completos
 - ✅ Casos de error cubiertos
 
 ### Código Limpio (20%)
-
 - ✅ Código legible y bien estructurado
 - ✅ Seguimiento de buenas prácticas
 - ✅ Documentación apropiada
 - ✅ Nombres descriptivos
 
 ### Arquitectura (10%)
-
 - ✅ Separación de responsabilidades
 - ✅ Uso correcto de decoradores
 - ✅ Configuración global apropiada
@@ -283,7 +248,6 @@ yarn format             # Formateo de código
 ## 🆘 Solución de Problemas
 
 ### Tests Fallando
-
 ```bash
 # Verificar que la base de datos esté sincronizada
 yarn db:migrate
@@ -296,7 +260,6 @@ yarn test --verbose
 ```
 
 ### Errores de Base de Datos
-
 ```bash
 # Resetear la base de datos
 yarn db:reset
@@ -306,7 +269,6 @@ npx prisma studio
 ```
 
 ### Errores de Dependencias
-
 ```bash
 # Limpiar cache e instalar de nuevo
 rm -rf node_modules yarn.lock
@@ -326,31 +288,4 @@ Una vez que todos los ejercicios estén completados y los tests pasen, habrás d
 - ✅ Middleware e interceptores
 - ✅ Arquitectura de aplicaciones
 
-## 📚 Recursos Adicionales
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-
-¡Buena suerte con tu evaluación! 🚀
+¡Buena suerte con tu evaluación! 🚀 
